@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"
+    ></script>
+    <title>Momonton</title>
+  </head>
+  <body>
+    <section id="background" class="hero is-fullheight is-relative">
+      <!-- head -->
+      <div class="hero-head">
+        <div class="container is-fluid has-text-centered">
+          <h1 id="weather" class="subtile has-text-white"></h1>
+        </div>
+      </div>
+      <!-- body -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <!-- clock -->
+          <h1 id="clock" class="title has-text-white"></h1>
+          <!-- user -->
+          <h1 id="user" class="title is-hidden has-text-white"></h1>
+          <!-- userform -->
+          <form id="userForm">
+            <div class="columns">
+              <div class="column"></div>
+              <div class="column">
+                <div class="field">
+                  <div class="control has-icons-left">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="write in your name"
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="column"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- bottom -->
+    <nav class="navbar is-fixed-bottom has-text-white">
+      <div class="container is-fluid">
+        <div class="columns is-mobile m-0">
+          <div class="column">
+            <button
+              id="settingsButton"
+              class="button is-small has-text-white is-hidden"
+            >
+              <span class="icon">
+                <i class="fas fa-user"></i>
+              </span>
+              <span>Settings</span>
+            </button>
+          </div>
+          <div class="column has-text-centered">made by rloveyoujs</div>
+          <div class="column has-text-right">
+            <button
+              id="toDosButton"
+              class="button is-small has-text-white is-hidden"
+            >
+              <span class="icon">
+                <i class="fas fa-list"></i>
+              </span>
+              <span>ToDos</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- settings modal -->
+    <div id="settingsModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Changes UserName</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+          <form id="changeUserForm">
+            <div class="field">
+              <div class="control has-icons-left">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="write in your name"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <!-- todo modal -->
+    <div id="toDosModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">ToDos List</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+          <section class="hero">
+            <div class="hero-head">
+              <form id="toDosForm">
+                <div class="field">
+                  <div class="control has-icons-left">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="write a to do"
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-list"></i>
+                    </span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="hero-body">
+              <div class="content">
+                <div id="nullToDos" class="container is-hidden">
+                  <h1 class="title has-text-centered">No todos yet</h1>
+                  <h3 class="subtitle has-text-centered has-text-grey">
+                    Add a todo to get started
+                  </h3>
+                </div>
+                <ul id="toDosList"></ul>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="./js/weather.js"></script>
+    <script src="./js/background.js"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/user.js"></script>
+    <script src="./js/settings.js"></script>
+    <script src="./js/toDos.js"></script>
+  </body>
+</html>
